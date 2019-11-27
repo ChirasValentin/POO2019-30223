@@ -1,13 +1,27 @@
 package javasmmr.zoowsome.models.animals;
 
+import javax.xml.stream.XMLEventWriter;
+import javax.xml.stream.XMLStreamException;
 
-public class Tiger extends Mammal{
-	public Tiger()
-	{
-		super(4,"Tigru",38.0f,99.3f,3.5,0.2);
+import javasmmr.zoowsome.services.factories.Constants;
+
+public class Tiger extends Mammal {
+	public Tiger() {
+		super(4, "Tigru", 38.0f, 99.3f, 3.5, 0.2);
 	}
-	 public Tiger(Integer nrOfLegs, String name,float normalBodyTemp,float percBodyHair, double maintenanceCost, double dangerPerc)
-	 {
-			super(nrOfLegs, name, normalBodyTemp,percBodyHair,maintenanceCost,dangerPerc);
-	 }
+
+	public Tiger(Integer nrOfLegs, String name, float normalBodyTemp, float percBodyHair, double maintenanceCost,
+			double dangerPerc) {
+		super(nrOfLegs, name, normalBodyTemp, percBodyHair, maintenanceCost, dangerPerc);
+	}
+
+	public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException
+
+	{
+
+		super.encodeToXml(eventWriter);
+
+		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animals.Mammal.Tiger);
+
+	}
 }
