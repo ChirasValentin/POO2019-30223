@@ -1,11 +1,7 @@
 package javasmmr.zoowsome.models.employees;
 
-import org.w3c.dom.Element;
-
-import javasmmr.zoowsome.models.animals.*;
+import javasmmr.zoowsome.models.animals.Animal;
 
 public interface Caretaker_I {
-	public String takeCareOf(Animals animal);
-
-	void decodeFromXml(Element element);
+	public String takeCareOf(Animal animal);
 }

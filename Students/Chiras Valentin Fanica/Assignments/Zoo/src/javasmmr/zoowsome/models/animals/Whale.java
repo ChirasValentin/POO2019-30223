@@ -1,30 +1,26 @@
 package javasmmr.zoowsome.models.animals;
 
+import static javasmmr.zoowsome.repositories.AnimalRepository.createNode;
+
 import javax.xml.stream.XMLEventWriter;
 import javax.xml.stream.XMLStreamException;
 
-import javasmmr.zoowsome.services.factories.Constants;
+import javasmmr.zoowsome.services.Constants;
 
 public class Whale extends Aquatic {
 
+	public Whale(String name, Double maintenanceCost, Double dangerPerc, Integer avg, waterType waterType) {
+		super(name, 0, maintenanceCost, dangerPerc, avg, waterType);
+
+	}
+
 	public Whale() {
-		super(0, "Blue Whale", 2500, WaterType.SALTWATER, 4.1, 0.79);
+		super("White", 0, 9.0, 0.95, 4000, waterType.saltwater);
 	}
 
-	public Whale(Integer nrOfLegs, String name, Integer avgSwimDepth, WaterType water, double maintenanceCost,
-			double dangerPerc) {
-		super(nrOfLegs, name, avgSwimDepth, water, maintenanceCost, dangerPerc);
-
-	}
-
-	public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException
-
-	{
+	public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException {
 
 		super.encodeToXml(eventWriter);
-
-		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animals.Aquatic.Whale);
-
+		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animals.Aquatics.Whale);
 	}
-
 }

@@ -1,6 +1,5 @@
 package javasmmr.zoowsome.models.animals;
 
-public enum WaterType {
-	SALTWATER,
-	FRESHWATER
+public enum waterType {
+	saltwater, freshwater
 }

@@ -1,25 +1,25 @@
 package javasmmr.zoowsome.models.animals;
 
+import static javasmmr.zoowsome.repositories.AnimalRepository.createNode;
+
 import javax.xml.stream.XMLEventWriter;
 import javax.xml.stream.XMLStreamException;
 
-import javasmmr.zoowsome.services.factories.Constants;
+import javasmmr.zoowsome.services.Constants;
 
 public class Snake extends Reptile {
-	public Snake()
-	{
-		super(0,"Piton",true,2.0,0.85);
-	}
-	public Snake(Integer nrOfLegs, String name, boolean laysEggs, double maintenanceCost, double dangerPerc) {
-		super(nrOfLegs, name,laysEggs, maintenanceCost, dangerPerc);	
-	}
-	public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException
 
-	{
+	public Snake(String name, Double maintenanceCost, Double dangerPerc, boolean laysEgg) {
+		super(name, 0, maintenanceCost, dangerPerc, laysEgg);
 
+	}
+
+	public Snake() {
+		super("Piton", 0, 3.0, 0.78, true);
+	}
+public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException{
+		
 		super.encodeToXml(eventWriter);
-
-		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animals.Reptile.Snake);
-
+		createNode(eventWriter,Constants.XML_TAGS.DISCRIMINANT,Constants.Animals.Reptiles.Snake);
 	}
 }

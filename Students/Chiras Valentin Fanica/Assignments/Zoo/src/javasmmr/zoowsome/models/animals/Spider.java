@@ -1,29 +1,25 @@
 package javasmmr.zoowsome.models.animals;
 
+import static javasmmr.zoowsome.repositories.AnimalRepository.createNode;
+
 import javax.xml.stream.XMLEventWriter;
 import javax.xml.stream.XMLStreamException;
 
-import javasmmr.zoowsome.services.factories.Constants;
+import javasmmr.zoowsome.services.Constants;
 
 public class Spider extends Insect {
+
+	public Spider(String name, Double maintenanceCost, Double dangerPerc,boolean isDangerous) {
+		super(name, 8, maintenanceCost, dangerPerc,false,isDangerous);
+		
+	}
+
 	public Spider() {
-		super(8, "Vaduva Neagra", true, true, 2.5, 0.95);
+		super("Tarantula",8,1.0,0.78,false,true);
 	}
-
-	public Spider(Integer nrOfLegs, String name, boolean canFly, boolean isDangerous, double maintenanceCost,
-			double dangerPerc) {
-		super(nrOfLegs, name, canFly, isDangerous, maintenanceCost, dangerPerc);
-
-	}
-
-	public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException
-
-	{
-
+public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException{
+		
 		super.encodeToXml(eventWriter);
-
-		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animals.Insect.Spider);
-
+		createNode(eventWriter,Constants.XML_TAGS.DISCRIMINANT,Constants.Animals.Insects.Spider);
 	}
-
 }

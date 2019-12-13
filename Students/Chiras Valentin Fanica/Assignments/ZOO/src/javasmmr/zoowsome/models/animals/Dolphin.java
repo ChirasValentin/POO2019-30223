@@ -8,19 +8,18 @@ import javax.xml.stream.XMLStreamException;
 import javasmmr.zoowsome.models.animals.waterType;
 import javasmmr.zoowsome.services.Constants;
 
-public class Shark extends Aquatic {
+public class Dolphin extends Aquatic {
 
-	public Shark(String name,  Double maintenanceCost, Double dangerPerc, Integer avg) {
-		super(name, 0, maintenanceCost, dangerPerc, avg, waterType.saltwater);
-		
+	public Dolphin(String name, Double maintenanceCost, Double dangerPerc, Integer avg) {
+		super(name, 0, maintenanceCost, dangerPerc, avg, waterType.freshwater);
+
 	}
-
-	public Shark() {
-		super("White Shark",0,5.0,0.95,3000,waterType.saltwater);
+	public Dolphin() {
+		super("La Plata dolphin",0,5.0,0.30,1500,waterType.freshwater);
 	}
 public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException{
 		
 		super.encodeToXml(eventWriter);
-		createNode(eventWriter,Constants.XML_TAGS.DISCRIMINANT,Constants.Animals.Aquatics.Shark);
+		createNode(eventWriter,Constants.XML_TAGS.DISCRIMINANT,Constants.Animals.Aquatics.Dolphin);
 	}
 }

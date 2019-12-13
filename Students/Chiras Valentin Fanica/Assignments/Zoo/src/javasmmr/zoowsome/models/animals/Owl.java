@@ -1,29 +1,25 @@
 package javasmmr.zoowsome.models.animals;
 
+import static javasmmr.zoowsome.repositories.AnimalRepository.createNode;
+
 import javax.xml.stream.XMLEventWriter;
 import javax.xml.stream.XMLStreamException;
 
-import javasmmr.zoowsome.services.factories.Constants;
+import javasmmr.zoowsome.services.Constants;
 
 public class Owl extends Bird {
 
+	public Owl(String name, Double maintenanceCost, Double dangerPerc, boolean migrates, Integer avg) {
+		super(name, 2, maintenanceCost, dangerPerc, migrates, avg);
+
+	}
 	public Owl() {
-		super(2, "Bubonis", 4500, false, 3.6, 0.3);
+		super("Long-eared ",2,4.0,0.05,false,1000);
 	}
-
-	public Owl(Integer nrOfLegs, String name, Integer avgFlightAltitude, boolean migrates, double maintenanceCost,
-			double dangerPerc) {
-		super(nrOfLegs, name, avgFlightAltitude, migrates, maintenanceCost, dangerPerc);
-
-	}
-
-	public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException
-
-	{
-
+public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException{
+		
 		super.encodeToXml(eventWriter);
-
-		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animals.Bird.Owl);
-
+		createNode(eventWriter,Constants.XML_TAGS.DISCRIMINANT,Constants.Animals.Birds.Owl);
 	}
+
 }

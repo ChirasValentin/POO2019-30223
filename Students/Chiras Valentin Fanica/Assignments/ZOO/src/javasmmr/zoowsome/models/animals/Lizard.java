@@ -7,21 +7,18 @@ import javax.xml.stream.XMLStreamException;
 
 import javasmmr.zoowsome.services.Constants;
 
-public class Parrot extends Bird {
+public class Lizard extends Reptile {
 
-	public Parrot(String name, Double maintenanceCost, Double dangerPerc, boolean migrates,
-			Integer avg) {
-		super(name, 2, maintenanceCost, dangerPerc, migrates, avg);
-		
+	public Lizard(String name, Double maintenanceCost, Double dangerPerc, boolean laysEgg) {
+		super(name, 4, maintenanceCost, dangerPerc, laysEgg);
+
 	}
-	public Parrot() {
-		super("Grey parrot",2,3.0,0.1,false,500);
-		
+	public Lizard() {
+		super("African Fat-Tailed Gecko",4,4.0,0.55,true);
 	}
 public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException{
 		
 		super.encodeToXml(eventWriter);
-		createNode(eventWriter,Constants.XML_TAGS.DISCRIMINANT,Constants.Animals.Birds.Parrot);
+		createNode(eventWriter,Constants.XML_TAGS.DISCRIMINANT,Constants.Animals.Reptiles.Lizard);
 	}
-	
 }

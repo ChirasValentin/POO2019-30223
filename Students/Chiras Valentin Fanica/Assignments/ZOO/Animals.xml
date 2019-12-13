@@ -1,0 +1,22 @@
+<?xml version="1.0"?><content>
+<ANIMAL>
+	<nrOfLegs>4</nrOfLegs>
+	<name>B. taurus</name>
+	<maintenanceCost>4.0</maintenanceCost>
+	<dangerPerc>0.45</dangerPerc>
+	<takenCareOf>false</takenCareOf>
+	<normalBodyTemp>36.2</normalBodyTemp>
+	<percBodyHair>0.95</percBodyHair>
+	<DISCRIMINANT>Cow</DISCRIMINANT>
+</ANIMAL>
+<ANIMAL>
+	<nrOfLegs>6</nrOfLegs>
+	<name>Butterfly</name>
+	<maintenanceCost>5.0</maintenanceCost>
+	<dangerPerc>0.78</dangerPerc>
+	<takenCareOf>false</takenCareOf>
+	<canFly>true</canFly>
+	<isDangerous>false</isDangerous>
+	<DISCRIMINANT>Butterfly</DISCRIMINANT>
+</ANIMAL>
+</content>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?><content>
+<EMPLOYEE>
+	<id>1480890760171670800</id>
+	<name>El Caretaker</name>
+	<salary>7000</salary>
+	<isDead>false</isDead>
+	<workingHours>8.0</workingHours>
+	<DISCRIMINANT>Caretaker</DISCRIMINANT>
+</EMPLOYEE>
+</content>

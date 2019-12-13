@@ -1,28 +1,24 @@
 package javasmmr.zoowsome.models.animals;
 
+import static javasmmr.zoowsome.repositories.AnimalRepository.createNode;
+
 import javax.xml.stream.XMLEventWriter;
 import javax.xml.stream.XMLStreamException;
 
-import javasmmr.zoowsome.services.factories.Constants;
+import javasmmr.zoowsome.services.Constants;
 
 public class Cow extends Mammal {
 
+	public Cow(String name, Double maintenanceCost, Double dangerPerc, float temp, float bodyHair) {
+		super(name, 4, maintenanceCost, dangerPerc, temp, bodyHair);
+	}
+
 	public Cow() {
-		super(4, "Aurica", 38.0f, 95.3f, 3.5, 0.2);
+		super("B. taurus", 4, 4.0, 0.45, 36.2f, 0.95f);
 	}
-
-	public Cow(Integer nrOfLegs, String name, float normalBodyTemp, float percBodyHair, double maintenanceCost,
-			double dangerPerc) {
-		super(nrOfLegs, name, normalBodyTemp, percBodyHair, maintenanceCost, dangerPerc);
-	}
-
-	public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException
-
-	{
-
+public void encodeToXml(XMLEventWriter eventWriter) throws XMLStreamException{
+		
 		super.encodeToXml(eventWriter);
-
-		createNode(eventWriter, Constants.XML_TAGS.DISCRIMINANT, Constants.Animals.Mammal.Cow);
-
+		createNode(eventWriter,Constants.XML_TAGS.DISCRIMINANT,Constants.Animals.Mammals.Cow);
 	}
 }
