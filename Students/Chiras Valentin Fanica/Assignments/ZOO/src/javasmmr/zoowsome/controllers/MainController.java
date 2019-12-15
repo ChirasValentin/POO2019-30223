@@ -5,10 +5,9 @@ import java.util.ArrayList;
 import javasmmr.zoowsome.models.animals.Animal;
 import javasmmr.zoowsome.models.animals.Butterfly;
 import javasmmr.zoowsome.models.animals.Cow;
-import javasmmr.zoowsome.models.employees.Caretaker;
-import javasmmr.zoowsome.models.employees.Employee;
+
 import javasmmr.zoowsome.repositories.AnimalRepository;
-import javasmmr.zoowsome.repositories.EmployeeRepository;
+
 
 
 public class MainController {
