@@ -7,22 +7,14 @@ import javasmmr.zoowsome.models.animals.Butterfly;
 import javasmmr.zoowsome.models.animals.Cow;
 
 import javasmmr.zoowsome.repositories.AnimalRepository;
+import javasmmr.zoowsome.views.utilities.MainMenuFrame;
 
 
 
 public class MainController {
 
 	public static void main(String[] args) throws Exception {
-	Animal cow= new Cow();
-	Animal butterfly = new Butterfly();
-	
-	AnimalRepository animalRepository = new AnimalRepository();
-	ArrayList<Animal> animals = new ArrayList<Animal>();
-	animals.add(cow);
-	animals.add(butterfly);
-	animalRepository.save(animals);
-	ArrayList<Animal> animalsToLoad = new ArrayList<Animal>();
-	animalsToLoad=animalRepository.load();
+		new MainMenuController(new MainMenuFrame("Main Menu"),false);
 
 	}
 
